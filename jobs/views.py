@@ -5,6 +5,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from .models import Job
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+def home(request):
+    job_app_data=Job.objects
+    return render(request,'jobs/home.html',{'jobs':job_app_data})
