@@ -14,4 +14,10 @@ class Blog(models.Model):
     proj_date=models.DateTimeField()
     proj_body=models.TextField(max_length=500)
 
+    def __str__(self):
+        return self.title
+
+    def summary(self):
+        return self.proj_body[:100]
+
 
